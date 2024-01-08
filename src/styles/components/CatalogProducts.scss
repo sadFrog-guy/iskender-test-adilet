@@ -1,0 +1,218 @@
+.catalogProducts {
+  margin: 0px 0;
+  max-width: 840px;
+  &-title {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    h2 {
+      font-family: 'Gilroy-Semibold', sans-serif;
+      color: #000;
+      font-size: 25px;
+    }
+    &_right {
+      color: #3186c3;
+      font-family: 'Gilroy-Semibold', sans-serif;
+      font-size: 16px;
+      cursor: pointer;
+      border-bottom: 1px solid transparent;
+    }
+  }
+  &-sorted {
+    font-size: 14px;
+    font-weight: 600;
+    span {
+      cursor: pointer;
+      color: var(--GENERAL, #2c7eb8);
+      text-decoration-line: underline;
+    }
+  }
+  &-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    overflow-y: auto;
+    padding: 10px;
+    margin: -10px;
+  }
+  &-items::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 100px;
+    background-color: #d9d9d9;
+  }
+  &-items::-webkit-scrollbar-thumb {
+    background-color: #4186b6;
+    border-radius: 100px;
+  }
+  &-items::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+    position: absolute;
+    border-radius: 100px;
+  }
+
+  .products-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    flex: 1 0 calc(14% - 8px);
+    min-width: auto !important;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease;
+    max-width: 200px;
+
+    &_imgdiv {
+      position: relative;
+
+      .heart {
+        padding: 6px 6px 0 6px;
+        border-radius: 5px;
+        background: var(--Transparent-white, rgba(255, 255, 255, 0.5));
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+      .heart:hover {
+        background: var(--lightest-main-color, #d7eefe);
+      }
+
+      svg,
+      img {
+        width: 100%;
+        height: auto;
+        max-height: 180px;
+      }
+    }
+
+    h3 {
+      font-family: 'Gilroy-Medium', sans-serif;
+      color: #1a1919;
+      font-size: 14px;
+      height: 34px;
+      overflow-y: hidden;
+    }
+
+    .redPrice {
+      color: #f00;
+      margin-right: 10px;
+    }
+
+    .discountPrice {
+      font-family: 'Gilroy-Regular', sans-serif;
+      color: #808080;
+      font-size: 16px;
+      text-decoration-line: line-through;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-family: 'Gilroy-bold', sans-serif;
+    }
+
+    h4 {
+      font-size: 15px;
+      color: #82cf6f;
+      font-family: 'Gilroy-Medium', sans-serif;
+    }
+
+    h5 {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    img {
+      width: 100%;
+      max-height: 180px;
+      object-fit: contain;
+    }
+
+    &_bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .quantity {
+        width: 88px;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .quantity:hover {
+        border-radius: 1000px;
+        border: 1px solid #dfdfdf;
+      }
+      svg:hover {
+        border-radius: 1000px;
+        rect {
+          fill: white;
+        }
+      }
+      .mathDiv {
+        height: 44px;
+      }
+      .mathDiv:hover {
+        border-radius: 10000px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+  &-item:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Тень по всему периметру div */
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    position: relative;
+    padding-top: 13px;
+  }
+  .pagination::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    background: #d0d0d0;
+    top: 0;
+    left: 0;
+  }
+  .pagination button {
+    all: unset;
+    width: 27px;
+    height: 27px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 100px;
+    border: 1px solid transparent;
+    color: #000;
+    font-family: Gilroy;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gilroy-Medium', sans-serif;
+  }
+  .pagination button.active {
+    background: var(--GENERAL, #2c7eb8);
+    color: #fff;
+    border: 1px solid var(--GENERAL, #2c7eb8);
+  }
+}
+
+@media (max-width: 768px) {
+  .products-title h2 {
+    font-size: 17px;
+  }
+}
+@media (max-width: 460px) {
+  .products {
+    padding: 0;
+    margin: 30px 0;
+  }
+}

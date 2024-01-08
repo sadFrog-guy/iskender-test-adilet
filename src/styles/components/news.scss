@@ -1,0 +1,37 @@
+.news {
+  .slick-list {
+    margin: 0 -10px;
+  }
+  .slick-slide {
+    padding: 0 8px;
+    overflow: hidden;
+  }
+  &-item {
+    width: 100%;
+    max-width: 460px;
+    height: 210px;
+    padding: 25px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    background: #f0f9ff;
+
+    h3 {
+      font-family: 'Gilroy-Medium', sans-serif;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 10px 30px;
+      background-color: #0063a9;
+      border-radius: 12px;
+      color: #fff;
+      font-style: normal;
+      font-size: 12px;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

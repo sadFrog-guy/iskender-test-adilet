@@ -1,0 +1,45 @@
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import CategoriesItem from './categoriesItem';
+import searchIco from '../icons/Search.svg';
+import { Link } from 'react-router-dom';
+
+const Categories = () => {
+  const [sortedCategories, setSortedCategories] = useState([]);
+  const categories = useSelector((state) => state.categories.data);
+  const {
+    categories: { getCategories },
+  } = useDispatch();
+
+  useEffect(() => {
+    getCategories();
+  }, []);
+
+  useEffect(() => {
+    setSortedCategories(
+      categories.filter((category) => category.img !== '').slice(0, 14)
+    );
+  }, [categories]);
+  return (
+    <div className='categories container'>
+      <div className='categories-title'>
+        <h2>Каталог</h2>
+        <Link to='/catalog' className='categories-title_right'>
+          все категории
+        </Link>
+      </div>
+      <div className='categories-search'>
+        <img src={searchIco} alt='search' />
+        <input type='text' placeholder='Искать товар...' />
+      </div>
+      <div className='categories-items'>
+        {sortedCategories.length > 0 &&
+          sortedCategories.map((category) => (
+            <CategoriesItem key={category._id} category={category} />
+          ))}
+      </div>
+    </div>
+  );
+};
+
+export default Categories;
