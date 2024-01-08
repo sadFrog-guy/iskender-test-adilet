@@ -19,7 +19,6 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
       align-items: flex-start;
 
       .my_account_navigation_block_link {
@@ -28,7 +27,7 @@
         height: 64px;
 
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
         gap: 15px;
 
@@ -39,12 +38,18 @@
         font-weight: 400;
         line-height: normal;
 
+        .my_account_navigation_block_label {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+        }
+
         &.line {
           border-bottom: 1px solid #dddddd;
         }
 
         &.active {
-          background: #f5f5f5;
+          color: #2C7EB8;
         }
 
         &.logout_button {
@@ -56,6 +61,21 @@
           border-top: 1px solid #dddddd;
 
           cursor: pointer;
+        }
+
+        .fav_count {
+          font-size: 15px;
+          font-weight: 400;
+          font-family: 'Gilroy-Regular';
+          color: #0063A9;
+          background: #D7EEFE;
+          border-radius: 50%;
+          width: 18px;
+          height: 18px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          justify-self: flex-end;
         }
       }
     }
@@ -72,6 +92,7 @@
         font-size: 25px;
         font-style: normal;
         font-weight: 600;
+        font-family: 'Gilroy-bold', sans-serif;
         line-height: normal;
       }
       .top_block {
@@ -105,9 +126,10 @@
               outline: none;
               border: none;
               color: #2c7eb8;
+              font-family: 'Gilroy-Regular', sans-serif;
               font-size: 15px;
               font-style: normal;
-              font-weight: 500;
+              font-weight: 600;
               line-height: normal;
               text-decoration-line: underline;
               cursor: pointer;
@@ -125,10 +147,11 @@
               .title {
                 margin: 0;
                 padding: 0;
-                color: #727272;
-                font-size: 15px;
+                color: #000;
+                font-family: 'Gilroy-Medium', sans-serif;
+                font-size: 14px;
                 font-style: normal;
-                font-weight: 400;
+                font-weight: 500;
                 line-height: normal;
               }
               .line {
@@ -190,6 +213,19 @@
                 &.error {
                   border: 1px solid red;
                 }
+
+                &.input_wrap__phone {
+                  border: none;
+                  padding: 0;
+                  border-radius: 0;
+                }
+
+                &.input_wrap {
+                  background-color: #fff;
+                  display: flex;
+                  align-items: center;
+                  padding: 7.5px 10px;
+                }
               }
               .buttons_block {
                 display: flex;
@@ -249,6 +285,48 @@
                   }
                 }
               }
+            }
+
+            .input_wrap__flex {
+              display: flex;
+              gap: 13.06px;
+              padding-right: 11.96px;
+              margin-right: 10px;
+              border-right: 1px solid #DDDDDD;
+            }
+
+            .input_wrap__flex > .icon {
+              cursor: pointer;
+            }
+
+            .input_block {
+              position: relative;
+            }
+
+            .input_block > .icon {
+              position: absolute;
+              top: 50%;
+              left: 12.25px;
+              transform: translateY(-50%);
+              width: 24px;
+              height: 24px;
+            }
+
+            .input_block > .input {
+              padding-left: 44px;
+            }
+
+            .input_block > .input_date::-webkit-calendar-picker-indicator {
+              width: 24px;
+              height: 24px;
+              position: absolute;
+              left: 12.25px;
+              opacity: 0;
+              cursor: pointer;
+            }
+
+            .input_block > .input_date {
+              font-family: "Inter", sans-serif;
             }
 
             .line {

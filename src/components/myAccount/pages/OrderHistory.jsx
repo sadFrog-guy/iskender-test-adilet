@@ -68,7 +68,9 @@ const OrderHistory = () => {
                 </div>
               </div>
               <h3>{el.price}</h3>
-              <button className={el.btn.class}>{el.btn.text}</button>
+              <div className='button_wrap'>
+                <button className={el.btn.class}>{el.btn.text}</button>
+              </div>
             </div>
           ))}
         </div>

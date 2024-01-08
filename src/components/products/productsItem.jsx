@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { ReactComponent as ProductDefault } from '../icons/product-default.svg';
 import { ReactComponent as Plus } from '../icons/plus.svg';
 import { ReactComponent as Minus } from '../icons/minus.svg';
 import { ReactComponent as Heart } from '../icons/heart.svg';
+import { ReactComponent as HeartFilled } from '../icons/heart_filled.svg';
 import { UseBasket } from '../../context/BasketContext';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import DetailOfProduct from '../../pages/DetailOfProduct';
@@ -10,6 +11,7 @@ import DetailOfProduct from '../../pages/DetailOfProduct';
 const ProductsItem = ({ product }) => {
   const navigate = useNavigate();
   const { addToBasket } = UseBasket();
+  const [isHeartActive, setHeartActive] = useState(false);
 
   const AddToBasket = (e) => {
     e.stopPropagation();
@@ -27,6 +29,10 @@ const ProductsItem = ({ product }) => {
     }
   };
 
+  const HandleHeartClick = () => {
+    setHeartActive(!isHeartActive)
+  }
+
   const navigateToDetail = () => {
     navigate(`/product`);
   };
@@ -39,10 +45,10 @@ const ProductsItem = ({ product }) => {
           element={<DetailOfProduct product={product} />}
         />
       </Routes>
-      <div className='products-item' onClick={navigateToDetail}>
+      <div className='products-item'>
         <div className='products-item_imgdiv'>
-          <div className='heart'>
-            <Heart />
+          <div className='heart' onClick={HandleHeartClick}>
+            {isHeartActive ? <HeartFilled/> : <Heart />}
           </div>
           {product.image !== null ? (
             <img src={product.image} alt={product.name} />
@@ -50,7 +56,7 @@ const ProductsItem = ({ product }) => {
             <ProductDefault />
           )}
         </div>
-        <h3>{product.name}</h3>
+        <h3 onClick={navigateToDetail}>{product.name}</h3>
         <h2>
           <span className={product.promoPrice > 0 ? 'redPrice' : ''}>
             {product.price} с
@@ -63,8 +69,8 @@ const ProductsItem = ({ product }) => {
         <h5>
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            width='7'
-            height='8'
+            width='5.8'
+            height='5.8'
             viewBox='0 0 7 8'
             fill='none'
           >

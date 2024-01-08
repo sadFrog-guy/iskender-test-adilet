@@ -46,15 +46,33 @@
         padding: 20px;
         display: flex;
         align-items: start;
-        justify-content: space-between;
+        justify-content: start;
         border-radius: 10px;
         background: #fff;
         flex-wrap: wrap;
         gap: 15px;
+
+        .button_wrap {
+          width: 35%;
+          display: flex;
+          justify-content: flex-end;
+
+          > button {
+            border-radius: 100px;
+            padding: 5px 15px;
+            border: none;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+          }
+        }
+
         .user {
           display: flex;
           align-items: center;
           gap: 15px;
+          width: 45%;
 
           &__name {
             display: flex;
@@ -66,11 +84,13 @@
               color: #000;
               font-size: 16px;
               font-weight: 500;
+              font-family: 'Gilroy-Medium', sans-serif;
             }
             > span {
               color: var(--main-color, #0063a9);
               font-size: 15px;
               font-weight: 400;
+              font-family: 'Gilroy-Regular', sans-serif;
             }
           }
         }
@@ -79,15 +99,7 @@
           color: #000;
           font-size: 16px;
           font-weight: 600;
-        }
-        > button {
-          border-radius: 100px;
-          padding: 5px 15px;
-          border: none;
-          color: #fff;
-          font-size: 12px;
-          font-weight: 500;
-          cursor: pointer;
+          width: 16%;
         }
 
         .first {

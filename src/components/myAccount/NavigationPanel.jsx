@@ -5,9 +5,15 @@ import * as Icons from '../icons/myAccount';
 const NavigationPanel = () => {
   const navLinksFirst = [
     {
+      icon: Icons.ProfileIcon,
+      label: 'Мои данные',
+      href: '/my-account/',
+    },
+    {
       icon: Icons.HeartIcon,
       label: 'Избранные товары',
       href: '/my-account/favourites',
+      fav_count: 5
     },
     {
       icon: Icons.ClockSquareIcon,
@@ -35,8 +41,17 @@ const NavigationPanel = () => {
             className={`my_account_navigation_block_link
           ${index !== navLinksFirst.length - 1 && 'line'}`}
             to={item.href}
+            end
           >
-            <img src={item.icon} alt='Test' /> {item.label}
+            <div className='my_account_navigation_block_label'>
+              <img src={item.icon} alt='Test' /> {item.label}
+            </div>
+
+            {item.fav_count &&
+                <div className='fav_count'>
+                  {item.fav_count}
+                </div>
+            }
           </NavLink>
         ))}
       </div>

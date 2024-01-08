@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as Icons from '../../icons/myAccount';
 import profile_photo from '../../../assets/profile.png';
+import kyrgyzstan_icon from '../../icons/Kyrgyzstan.svg';
+import arrowDown_icon from '../../icons/arrow-down.svg';
+import userMy_icon from '../../icons/User.svg';
+import messageMy_icon from '../../icons/Message.svg';
+import locationMy_icon from '../../icons/Location-i.svg';
+import calendarMy_icon from '../../icons/calendar.svg';
 
 const Profile = () => {
   const {
@@ -52,7 +58,7 @@ const Profile = () => {
             <div className='input_high_block'>
               <label htmlFor='user_name'>ФИО</label>
               <div className='input_block'>
-                <img className='icon' src='' alt='' />
+                <img className='icon' src={userMy_icon} alt='' />
                 <input
                   type='text'
                   className={`input ${errors.name && `error`}`}
@@ -64,19 +70,25 @@ const Profile = () => {
             <div className='input_high_block'>
               <label htmlFor='user_name'>Номер телефона</label>
               <div className='input_block'>
-                <img className='icon' src='' alt='' />
-                <input
-                  type='text'
-                  className={`input ${errors.phone && `error`}`}
-                  placeholder='Номер телефона'
-                  {...register('phone', { required: true })}
-                />
+                <div className='input input_wrap'>
+                  <div className='input_wrap__flex'>
+                    <img className='icon' src={kyrgyzstan_icon} alt='' />
+                    <img className='icon' src={arrowDown_icon} alt='' />
+                  </div>
+
+                  <input
+                      type='text'
+                      className={`input input_wrap__phone ${errors.phone && `error`}`}
+                      placeholder='Номер телефона'
+                      {...register('phone', { required: true })}
+                  />
+                </div>
               </div>
             </div>
             <div className='input_high_block'>
               <label htmlFor='user_name'>E- mail</label>
               <div className='input_block'>
-                <img className='icon' src='' alt='' />
+                <img className='icon' src={messageMy_icon} alt='' />
                 <input
                   type='text'
                   className={`input ${errors.email && `error`}`}
@@ -91,10 +103,10 @@ const Profile = () => {
             <div className='input_high_block'>
               <label htmlFor='user_name'>Дата рождения</label>
               <div className='input_block'>
-                <img className='icon' src='' alt='' />
+                <img className='icon' src={calendarMy_icon} alt='' />
                 <input
                   type='date'
-                  className={`input ${errors.date && `error`}`}
+                  className={`input input_date ${errors.date && `error`}`}
                   defaultValue='21.01.1995'
                   {...register('date', { required: true })}
                 />
@@ -103,7 +115,7 @@ const Profile = () => {
             <div className='input_high_block'>
               <label htmlFor='user_name'>Город</label>
               <div className='input_block'>
-                <img className='icon' src='' alt='' />
+                <img className='icon' src={locationMy_icon} alt='' />
                 <input
                   type='text'
                   className={`input ${errors.city && `error`}`}
