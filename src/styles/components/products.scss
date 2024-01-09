@@ -124,7 +124,13 @@
       svg:hover {
         border-radius: 1000px;
         rect {
-          fill: #c5e4fa;
+          fill: #fff;
+        }
+      }
+      svg:active {
+        border-radius: 1000px;
+        rect {
+          fill: #3286c3;
         }
       }
       .mathDiv {
@@ -136,6 +142,7 @@
       }
     }
   }
+
   &-item:hover {
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Тень по всему периметру div */
@@ -159,21 +166,21 @@
 
 .slick-prev {
   left: -40px;
-  background: url('../../components/icons/arrow-left.svg');
+  background: url("../../components/icons/arrow-left.svg");
 }
 .slick-prev:hover,
 .slick-prev:focus {
-  background: url('../../components/icons/arrow-left.svg');
+  background: url("../../components/icons/arrow-left.svg");
 }
 
 .slick-next {
   right: -30px;
-  background: url('../../components/icons/arrow-right.svg');
+  background: url("../../components/icons/arrow-right.svg");
 }
 
 .slick-next:hover,
 .slick-next:focus {
-  background: url('../../components/icons/arrow-right.svg');
+  background: url("../../components/icons/arrow-right.svg");
 }
 
 @media (max-width: 991px) {

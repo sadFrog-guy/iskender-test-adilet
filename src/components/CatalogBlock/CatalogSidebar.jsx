@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import Slider from 'rc-slider';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { ReactComponent as IcoArrow } from '../icons/arrowCategory.svg';
-import 'rc-slider/assets/index.css';
+import React, { useState, useEffect } from "react";
+import Slider from "rc-slider";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { ReactComponent as IcoArrow } from "../icons/arrowCategory.svg";
+import "rc-slider/assets/index.css";
 
-const CatalogSidebar = ({ title }) => {
+const CatalogSidebar = ({ title, display, setShow }) => {
   const [openCategories, setOpenCategories] = useState([]);
   const [price, setPrice] = useState([0, 100]);
   const [aPriceRange, aPSetPriceRange] = useState([0, 100]);
@@ -51,14 +51,17 @@ const CatalogSidebar = ({ title }) => {
   // });
   // console.log(categories);
   return (
-    <div className='category-sidebar'>
-      <div className='category-sidebar_title'>
+    <div
+      className="category-sidebar"
+      style={display ? { display: "block" } : null}
+    >
+      <div className="category-sidebar_title">
         <h2>{title}</h2>
       </div>
-      <div className='category-sidebar_blocks'>
-        <div className='category-sidebar_block'>
+      <div className="category-sidebar_blocks">
+        <div className="category-sidebar_block">
           {filteredCategories.map((category) => (
-            <div className='block-item' key={category._id}>
+            <div className="block-item" key={category._id}>
               {!category.parent && (
                 <button onClick={() => toggleCategory(category._id)}>
                   {category.name} <IcoArrow />
@@ -67,13 +70,18 @@ const CatalogSidebar = ({ title }) => {
 
               <ul
                 className={
-                  openCategories.includes(category._id) ? 'open' : 'closed'
+                  openCategories.includes(category._id) ? "open" : "closed"
                 }
               >
                 {categories
                   .filter((subCategory) => subCategory.parent === category._id)
                   .map((subCategory) => (
-                    <li key={subCategory._id}>
+                    <li
+                      key={subCategory._id}
+                      onClick={() => {
+                        setShow();
+                      }}
+                    >
                       <Link to={`/category/${subCategory._id}`}>
                         {subCategory.name}
                       </Link>
@@ -83,9 +91,9 @@ const CatalogSidebar = ({ title }) => {
             </div>
           ))}
         </div>
-        <div className='slider'>
+        <div className="slider">
           <h4>По цене</h4>
-          <p className='price-range'>
+          <p className="price-range">
             <span>{aPriceRange[0]}&nbsp;с</span>
             <span>{aPriceRange[1]}&nbsp;с</span>
           </p>
@@ -95,11 +103,11 @@ const CatalogSidebar = ({ title }) => {
             max={price[1]}
             value={aPriceRange}
             onChange={handleSliderChange}
-            className='slider-block'
+            className="slider-block"
           />
-          <div className='slider-buttons'>
-            <button className='btn-show'>Показать</button>
-            <button className='btn-reset'>Х Сбросить</button>
+          <div className="slider-buttons">
+            <button className="btn-show">Показать</button>
+            <button className="btn-reset">Х Сбросить</button>
           </div>
         </div>
       </div>
