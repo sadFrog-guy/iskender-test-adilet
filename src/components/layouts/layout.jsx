@@ -5,11 +5,16 @@ import Breadcrumbs from './Breadcrumbs';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { UseEnterShow } from '../../context/EnterContext';
 import Enter from '../../pages/Enter/Enter';
+import useCheckMobileScreen from "../hooks/useCheckMobileScreen";
+import '../../styles/layout/wrapper.scss'
 
 const Layout = ({ children }) => {
+  const isMobile = useCheckMobileScreen();
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
+  const isAccountPage = location.pathname.includes('my-account');
+  console.log(isMobile)
   const { loginWithPhone, loginWithEmail, register } = UseEnterShow();
 
   useEffect(() => {
@@ -27,16 +32,27 @@ const Layout = ({ children }) => {
       </div>
     );
   }
-  return (
-    <div className={'main-background' + (isHomePage ? ' homeM' : '')}>
-      <Header />
-      <div className='container'>
-        <Breadcrumbs />
-        {children}
+
+  if (isMobile && isAccountPage) {
+    return (
+      <div className={'main-background' + (isHomePage ? ' homeM' : '')}>
+        <div className='container accountM'>
+          {children}
+        </div>
       </div>
-      <Footer />
-    </div>
-  );
+    )
+  } else {
+    return (
+        <div className={'main-background' + (isHomePage ? ' homeM' : '')}>
+          <Header />
+          <div className='container'>
+            <Breadcrumbs />
+            {children}
+          </div>
+          <Footer />
+        </div>
+    );
+  }
 };
 
 export default Layout;

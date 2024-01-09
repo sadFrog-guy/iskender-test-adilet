@@ -1,9 +1,9 @@
 import React from 'react';
-import Search from '../../UI/Search/Search';
 import ProductsItem from '../../products/productsItem';
 import Product from '../.../../../../components/icons/product-default.svg';
 import '../../../styles/components/favourites.scss';
-import NoFavourites from "../../NoFavourites/NoFavourites";
+import EmptySection from "../../EmptySection/EmptySection";
+import heart_icon from '../../icons/heart_nofav.svg';
 
 const Favourites = () => {
   const favorite = {
@@ -23,11 +23,11 @@ const Favourites = () => {
     <div className='favourites_container'>
       <h1>Избранные товары</h1>
       <div className='favourites'>
-        {favourites.length != 0
+        {favourites.length !== 0
           ? favourites.map((favourite, idx) => (
                 <ProductsItem key={idx} product={favourite} />
             ))
-          : <NoFavourites/>
+          : <EmptySection icon={heart_icon} title='Избранных товаров нет'/>
         }
       </div>
     </div>
