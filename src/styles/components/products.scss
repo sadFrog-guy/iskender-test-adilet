@@ -1,194 +1,194 @@
 .products {
-  margin: 65px 0;
-  .slick-list {
-    margin: -10px;
-  }
-  .slick-track {
-    padding: 10px 0;
-  }
-  &-title {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    h2 {
-      color: #000;
-      font-size: 25px;
+    margin: 65px 0;
+    .slick-list {
+        margin: -10px;
     }
-    &_right {
-      color: #3186c3;
-      font-size: 16px;
-      cursor: pointer;
-      border-bottom: 1px solid transparent;
+    .slick-track {
+        padding: 10px 0;
     }
-  }
-
-  &-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-
-  &-item {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    flex: 1 0 calc(14% - 8px);
-    min-width: calc(14% - 8px);
-    min-width: 170px;
-    max-width: 250px;
-    box-sizing: border-box;
-    transition: box-shadow 0.3s ease;
-
-    &_imgdiv {
-      position: relative;
-
-      .heart {
-        padding: 6px 6px 0 6px;
-        border-radius: 5px;
-        background: var(--Transparent-white, rgba(255, 255, 255, 0.5));
-        position: absolute;
-        right: 10px;
-        top: 10px;
-      }
-      .heart:hover {
-        background: var(--lightest-main-color, #d7eefe);
-      }
-
-      svg,
-      img {
-        width: 100%;
-        height: auto;
-        max-height: 180px;
-      }
-    }
-
-    h3 {
-      color: #1a1919;
-      font-size: 14px;
-      height: 34px;
-      overflow-y: hidden;
-    }
-
-    .redPrice {
-      color: #f00;
-      margin-right: 10px;
-    }
-
-    .discountPrice {
-      color: #808080;
-      font-size: 16px;
-      text-decoration-line: line-through;
-    }
-
-    h2 {
-      font-size: 18px;
-    }
-
-    h4 {
-      font-size: 15px;
-      color: #82cf6f;
-    }
-
-    h5 {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    img {
-      width: 100%;
-      max-height: 180px;
-      object-fit: contain;
-    }
-
-    &_bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      .quantity {
-        width: 88px;
-        height: 44px;
+    &-title {
+        margin-bottom: 20px;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: 0.2s;
-      }
-      .quantity:hover {
-        border-radius: 1000px;
-        border: 1px solid #dfdfdf;
-      }
-      svg:hover {
-        border-radius: 1000px;
-        rect {
-          fill: #c5e4fa;
+        justify-content: space-between;
+        align-items: end;
+        h2 {
+            color: #000;
+            font-size: 25px;
         }
-      }
-      .mathDiv {
-        height: 44px;
-      }
-      .mathDiv:hover {
-        border-radius: 10000px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
+        &_right {
+            color: #3186c3;
+            font-size: 16px;
+            cursor: pointer;
+            border-bottom: 1px solid transparent;
+        }
     }
-  }
-  &-item:hover {
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Тень по всему периметру div */
-  }
+
+    &-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    &-item {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        flex: 1 0 calc(14% - 8px);
+        min-width: calc(14% - 8px);
+        min-width: 170px;
+        max-width: 250px;
+        box-sizing: border-box;
+        transition: box-shadow 0.3s ease;
+
+        &_imgdiv {
+            position: relative;
+
+            .heart {
+                padding: 6px 6px 0 6px;
+                border-radius: 5px;
+                background: var(--Transparent-white, rgba(255, 255, 255, 0.5));
+                position: absolute;
+                right: 10px;
+                top: 10px;
+            }
+            .heart:hover {
+                background: var(--lightest-main-color, #d7eefe);
+            }
+
+            svg,
+            img {
+                width: 100%;
+                height: auto;
+                max-height: 180px;
+            }
+        }
+
+        h3 {
+            color: #1a1919;
+            font-size: 14px;
+            height: 34px;
+            overflow-y: hidden;
+        }
+
+        .redPrice {
+            color: #f00;
+            margin-right: 10px;
+        }
+
+        .discountPrice {
+            color: #808080;
+            font-size: 16px;
+            text-decoration-line: line-through;
+        }
+
+        h2 {
+            font-size: 18px;
+        }
+
+        h4 {
+            font-size: 15px;
+            color: #82cf6f;
+        }
+
+        h5 {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        img {
+            width: 100%;
+            max-height: 180px;
+            object-fit: contain;
+        }
+
+        &_bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .quantity {
+                width: 88px;
+                height: 44px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.2s;
+            }
+            .quantity:hover {
+                border-radius: 1000px;
+                border: 1px solid #dfdfdf;
+            }
+            svg:hover {
+                border-radius: 1000px;
+                rect {
+                    fill: #c5e4fa;
+                }
+            }
+            .mathDiv {
+                height: 44px;
+            }
+            .mathDiv:hover {
+                border-radius: 10000px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+    &-item:hover {
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Тень по всему периметру div */
+    }
 }
 
 .slick-slide {
-  padding: 10px 5px;
-  overflow: hidden;
+    padding: 10px 5px;
+    overflow: hidden;
 }
 
 .slick-arrow {
-  width: 30px;
-  height: 30px;
+    width: 30px;
+    height: 30px;
 }
 
 .slick-arrow::before {
-  font-size: 30px;
-  color: transparent;
+    font-size: 30px;
+    color: transparent;
 }
 
 .slick-prev {
-  left: -40px;
-  background: url('../../components/icons/arrow-left.svg');
+    left: -40px;
+    background: url("../../components/icons/arrow-left.svg");
 }
 .slick-prev:hover,
 .slick-prev:focus {
-  background: url('../../components/icons/arrow-left.svg');
+    background: url("../../components/icons/arrow-left.svg");
 }
 
 .slick-next {
-  right: -30px;
-  background: url('../../components/icons/arrow-right.svg');
+    right: -30px;
+    background: url("../../components/icons/arrow-right.svg");
 }
 
 .slick-next:hover,
 .slick-next:focus {
-  background: url('../../components/icons/arrow-right.svg');
+    background: url("../../components/icons/arrow-right.svg");
 }
 
 @media (max-width: 991px) {
-  .slick-arrow {
-    display: none !important;
-  }
+    .slick-arrow {
+        display: none !important;
+    }
 }
 @media (max-width: 768px) {
-  .products-title h2 {
-    font-size: 17px;
-  }
+    .products-title h2 {
+        font-size: 17px;
+    }
 }
 @media (max-width: 460px) {
-  .products {
-    padding: 0;
-    margin: 30px 0;
-  }
+    .products {
+        padding: 0;
+        margin: 30px 0;
+    }
 }

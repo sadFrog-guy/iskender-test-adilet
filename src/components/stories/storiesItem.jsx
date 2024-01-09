@@ -1,11 +1,30 @@
-import React from 'react';
+import React, { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 
 const StoriesItem = ({ story, selectStory }) => {
-  return (
-    <div className='stories-item' onClick={() => selectStory(story)}>
-      <img src={story.img} alt='story image' />
-    </div>
-  );
-};
+    const dispatch = useDispatch()
+    const watched = useSelector((state) => state.stories.watched)
 
-export default StoriesItem;
+    return (
+        <div
+            className="stories-item"
+            onClick={() => {
+                selectStory(story)
+                dispatch.stories.setWatched(story._id)
+            }}
+        >
+            <img
+                style={{
+                    border: `1px solid ${
+                        watched[story._id] ? "#5c5c5c" : "#d8effd"
+                    }`,
+                }}
+                src={story.img}
+                alt="story image"
+            />
+            <p>Акции</p>
+        </div>
+    )
+}
+
+export default StoriesItem
