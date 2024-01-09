@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 import LogoSmall from "../icons/logoSmall"
-import { ReactComponent as ProfileSVG } from "../icons/Profile.svg"
+import { ReactComponent as ProfileSVG } from "../icons/profile.svg"
 import { ReactComponent as Market } from "../icons/market.svg"
 import searchIco from "../icons/Search.svg"
 import logoLogin from "../icons/logoForLogin.svg"

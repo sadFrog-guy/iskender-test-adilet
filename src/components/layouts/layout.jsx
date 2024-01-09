@@ -5,7 +5,7 @@ import Breadcrumbs from './Breadcrumbs';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { UseEnterShow } from '../../context/EnterContext';
 import Enter from '../../pages/Enter/Enter';
-import useCheckMobileScreen from "../hooks/useCheckMobileScreen";
+import useCheckMobileScreen from "../../hooks/useCheckMobileScreen";
 import '../../styles/layout/wrapper.scss'
 
 const Layout = ({ children }) => {

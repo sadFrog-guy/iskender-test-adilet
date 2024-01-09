@@ -9,7 +9,7 @@ import PersonalAccount from './pages/PersonalAccount';
 import DetailOfProduct from './pages/DetailOfProduct';
 
 import Plug from './Plug';
-import useCheckMobileScreen from "./components/hooks/useCheckMobileScreen";
+import useCheckMobileScreen from "./hooks/useCheckMobileScreen";
 import ProfileMobile from "./components/myAccountMobile/ProfileMobile";
 import PersonalAccountMobile from "./components/myAccountMobile/PersonalAccountMobile";
 
