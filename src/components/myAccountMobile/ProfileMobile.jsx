@@ -84,7 +84,7 @@ const ProfileMobile = () => {
                   end
               >
                 <div className='profileAdaptive_list__item'>
-                  <img src={Icons.ClockSquareIcon} alt='Test' /> Новости и Акции
+                  <img src={Icons.ClockSquareIcon} alt='Test' /> История заказов
                 </div>
               </NavLink>
             </div>
