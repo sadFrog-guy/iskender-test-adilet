@@ -6,13 +6,6 @@ import {NavLink} from "react-router-dom";
 import * as Icons from '../icons/myAccount';
 import '../../styles/components/ProfileMobile.scss';
 
-// str[0] = str[2]
-
-// if str[0] == 'a':
-//    temp = str[2]
-//    str[1] = temp
-//    temp = str[1]
-
 const ProfileMobile = () => {
   return (
       <div className='profileAdaptive'>
