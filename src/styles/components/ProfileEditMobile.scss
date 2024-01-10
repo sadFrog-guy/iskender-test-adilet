@@ -1,10 +1,79 @@
 .profileEdit {
   padding: 0 15px;
-  padding-bottom: 30px;
+  padding-bottom: 130px;
+  background: #F8F8F8;
+  position: relative;
+
+  &_modal {
+    position: fixed;
+    z-index: 13;
+    display: none;
+
+    &.active {
+      display: block;
+    }
+
+    &__window {
+      width: 362px;
+      position: fixed;
+      z-index: 15;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 14px;
+      background: rgba(232, 232, 232, 0.97);
+      overflow: hidden;
+      transition: all .3s;
+    }
+
+    &__dark {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      z-index: 14;
+      background: #1a1919;
+      opacity: 0.5;
+      top: 0;
+      left: 0;
+    }
+
+    &__button {
+      padding: 18px 20px;
+      border: none;
+      width: 100%;
+      border-bottom: 0.33px solid rgba(60, 60, 67, 0.36);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #007AFF;
+      font-size: 16px;
+      font-weight: 500;
+      font-family: 'Gilroy-Medium';
+
+      &.active {
+        background: rgba(252, 252, 252, 0.97);
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &.title {
+        font-size: 12px;
+        font-family: 'Gilroy-Regular';
+        color: #727272;
+      }
+
+      &.cancel {
+        color: #AEAEB2;
+      }
+    }
+  }
 
   .profileAdaptive_top {
     margin-bottom: 19px;
     margin-top: 20px;
+    text-decoration: none;
   }
 
   .profileAdaptive_text {

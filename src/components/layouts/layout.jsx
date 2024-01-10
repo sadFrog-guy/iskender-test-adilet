@@ -14,7 +14,6 @@ const Layout = ({ children }) => {
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
   const isAccountPage = location.pathname.includes('my-account');
-  console.log(isMobile)
   const { loginWithPhone, loginWithEmail, register } = UseEnterShow();
 
   useEffect(() => {

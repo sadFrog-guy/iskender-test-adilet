@@ -4,6 +4,7 @@
     "private": true,
     "proxy": "http://localhost:3000",
     "dependencies": {
+        "18": "^0.0.0",
         "@rematch/core": "^2.2.0",
         "@rematch/loading": "^2.1.2",
         "@testing-library/jest-dom": "^5.17.0",
@@ -60,6 +61,7 @@
         "eslint-plugin-prettier": "^5.0.1",
         "eslint-plugin-react": "^7.33.2",
         "prettier": "^3.1.1",
-        "sass": "^1.69.5"
+        "sass": "^1.69.5",
+        "webpack": "^5.89.0"
     }
 }

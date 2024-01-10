@@ -6,26 +6,61 @@ import {NavLink} from "react-router-dom";
 import * as Icons from '../icons/myAccount';
 import '../../styles/components/ProfileMobile.scss';
 
+// str[0] = str[2]
+
+// if str[0] == 'a':
+//    temp = str[2]
+//    str[1] = temp
+//    temp = str[1]
+
 const ProfileMobile = () => {
   return (
       <div className='profileAdaptive'>
+        <div className='profileAdaptive_modal'>
+          <div className="profileAdaptive_modal__dark"/>
+
+          <div className="profileAdaptive_modal__window">
+            <div className="profileAdaptive_modal__top">
+              <p className="profileAdaptive_modal__title">
+                Вы действительно хотите выйти?
+              </p>
+            </div>
+
+            <div className="profileAdaptive_modal__bottom">
+              <button className="profileAdaptive_modal__button">
+                Выйти
+              </button>
+
+              <button className="profileAdaptive_modal__button">
+                Выйти
+              </button>
+            </div>
+          </div>
+        </div>
+
         <div className="profileAdaptive_background">
           <EllipsesSvg/>
         </div>
 
-        <div className='profileAdaptive_top'>
+        <NavLink
+            className='profileAdaptive_top'
+            to='/my-account'
+        >
           <ArrowIcon/>
 
           <p className='profileAdaptive_text'>
             Профиль
           </p>
-        </div>
+        </NavLink>
 
         <div className='profileAdaptive_window'>
           <div className='profileAdaptive_pfp'>
-            <p className='profileAdaptive_change'>
+            <NavLink
+                className='profileAdaptive_change'
+                to='/my-account/edit'
+            >
               Изм.
-            </p>
+            </NavLink>
 
             <div className='profileAdaptive_image'>
               <img src={profile_photo} alt="Profile"/>

@@ -10,6 +10,9 @@ import calendarMy_icon from "../icons/calendar.svg";
 import locationMy_icon from "../icons/Location-i.svg";
 import {useForm} from "react-hook-form";
 import '../../styles/components/ProfileEditMobile.scss';
+import ModalButtonMobile from "../ModalButtonMobile/ModalButtonMobile";
+import ModalMobileA from "../ModalMobile/ModalMobileA";
+import {NavLink} from "react-router-dom";
 
 const ProfileEditMobile = () => {
   const {
@@ -21,7 +24,7 @@ const ProfileEditMobile = () => {
   });
 
   const [selectedGender, setSelectedGender] = useState(null);
-  const [isPfpActive, setPfpActive] = useState(false)
+  const [isPfpActive, setPfpActive] = useState(false);
 
   const onSubmit = (data) => {
     const formData = { ...data, sex: selectedGender };
@@ -33,18 +36,30 @@ const ProfileEditMobile = () => {
   };
 
   const handlePfpClick = () => {
-    setPfpActive(!isPfpActive)
+    setPfpActive(true)
+  }
+
+  const handleDarkClick = () => {
+    setPfpActive(false)
   }
 
   return (
       <div className='profileEdit'>
-        <div className='profileAdaptive_top profileEdit_top'>
+        <ModalMobileA
+          handleClick={handlePfpClick}
+          isActive={isPfpActive}
+        />
+
+        <NavLink
+            className='profileAdaptive_top profileEdit_top'
+            to='/my-account'
+        >
           <ArrowIcon/>
 
           <p className='profileAdaptive_text profileEdit_text'>
             Профиль
           </p>
-        </div>
+        </NavLink>
 
         <div className="profileEdit_pfp">
           <div className="profileEdit_pfp__image" onClick={handlePfpClick}>

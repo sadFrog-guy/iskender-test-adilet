@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, useLocation} from "react-router-dom";
 import Profile from "../myAccount/pages/Profile";
 import Favourites from "../myAccount/pages/Favourites";
 import OrderHistory from "../myAccount/pages/OrderHistory";
@@ -7,17 +7,28 @@ import PrivacyPolicy from "../myAccount/pages/PrivacyPolicy";
 import TermsUse from "../myAccount/pages/TermsUse";
 import ProfileMobile from "./ProfileMobile";
 import ProfileEditMobile from "./ProfileEditMobile";
+import NavBarMobile from "../NavBarMobile/NavBarMobile";
 
 const PersonalAccountMobile = () => {
+  const current = useLocation();
+  const isProfile = current.pathname === '/my-account/';
+
   return (
-    <Routes>
-      <Route path='/' element={<ProfileMobile />} />
-      <Route path='/edit' element={<ProfileEditMobile />} />
-      <Route path='/favourites' element={<Favourites />} />
-      <Route path='/order-history' element={<OrderHistory />} />
-      <Route path='/privacy-policy' element={<PrivacyPolicy />} />
-      <Route path='/terms-use' element={<TermsUse />} />
-    </Routes>
+      <>
+        <Routes>
+          <Route path='/' element={<ProfileMobile />} />
+          <Route path='/edit' element={<ProfileEditMobile />} />
+          <Route path='/favourites' element={<Favourites />} />
+          <Route path='/order-history' element={<OrderHistory />} />
+          <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+          <Route path='/terms-use' element={<TermsUse />} />
+        </Routes>
+
+        {isProfile
+          ? ''
+          : <NavBarMobile/>
+        }
+      </>
   );
 };
 
