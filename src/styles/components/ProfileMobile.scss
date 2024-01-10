@@ -90,6 +90,18 @@
     position: relative;
     margin-bottom: 50px;
     text-decoration: none;
+
+    &.profileEdit_nav {
+      margin: 20px 0;
+    }
+  }
+
+  &_top.profileEdit_nav > svg > path {
+    fill: #000;
+  }
+
+  &_text.profileEdit_nav {
+    color: #000;
   }
 
   &_top > svg {
@@ -97,11 +109,12 @@
     left: 15px;
     top: 50%;
     transform: translateY(-60%);
+    fill: #fff;
   }
 
   &_text {
     font-size: 17px;
-    font-weight: 500;
+    font-weight: 600;
     font-family: 'Gilroy-Medium', sans-serif;
     color: #fff;
   }

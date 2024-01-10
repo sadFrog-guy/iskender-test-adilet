@@ -13,6 +13,7 @@ import '../../../styles/components/ProfileEditMobile.scss';
 import ModalButtonMobile from "../../ModalButtonMobile/ModalButtonMobile";
 import ModalMobileA from "../../ModalMobile/ModalMobileA";
 import {NavLink} from "react-router-dom";
+import TopNavMobile from "../../TopNavMobile/TopNavMobile";
 
 const ProfileEditMobile = () => {
   const {
@@ -46,16 +47,7 @@ const ProfileEditMobile = () => {
           isActive={isPfpActive}
         />
 
-        <NavLink
-            className='profileAdaptive_top profileEdit_top'
-            to='/my-account'
-        >
-          <ArrowIcon/>
-
-          <p className='profileAdaptive_text profileEdit_text'>
-            Профиль
-          </p>
-        </NavLink>
+        <TopNavMobile additionalClass='profileEdit_nav'/>
 
         <div className="profileEdit_pfp">
           <div className="profileEdit_pfp__image" onClick={handlePfpClick}>

@@ -1,0 +1,21 @@
+.top {
+  margin-bottom: 19px;
+  margin-top: 20px;
+  text-decoration: none;
+
+  > svg > path {
+    fill: #000;
+  }
+
+  &.light > svg > path {
+    fill: #fff;
+  }
+}
+
+.text {
+  color: #000;
+
+  &.light {
+    color: #fff;
+  }
+}

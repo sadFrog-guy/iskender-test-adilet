@@ -1,10 +1,10 @@
 import React from 'react';
 
-const OrderItem = ({Icon, el}) => {
+const OrderItem = ({icon, el}) => {
   return (
       <div className='order' key={el.id}>
         <div className='user'>
-          <Icon />
+          {icon}
           <div className='user__name'>
             <p>{el.name}</p>
             <span>{el.name}</span>

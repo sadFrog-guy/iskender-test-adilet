@@ -115,3 +115,72 @@
     }
   }
 }
+
+@media (max-width: 426px) {
+  .orders_history {
+    padding: 0 15px;
+    padding-bottom: 90px;
+  }
+
+  .orders_history > h1 {
+    display: none;
+  }
+
+  .dates {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .orders_history .date_order .orders {
+    gap: 15px;
+  }
+
+  .orders_history .date_order .orders .order {
+    padding: 0;
+    padding-bottom: 15px;
+    background: transparent;
+    border-bottom: 1px solid #DDDDDD;
+    border-radius: 0;
+    gap: 5px;
+  }
+
+  .orders_history .date_order .orders .order:last-child {
+    border-bottom: none;
+  }
+
+  .orders_history .date_order .orders .order .user > svg {
+    width: 29px;
+    height: 29px;
+  }
+
+  .orders_history .date_order .orders .order .user {
+    align-items: flex-start;
+    width: 65%;
+  }
+
+  .orders_history .date_order .orders .order > h3 {
+    width: 33%;
+    align-self: flex-end;
+    text-align: right;
+  }
+
+  .orders_history .date_order .orders .order .button_wrap {
+    padding-left: 42px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .user__name > p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    font-family: 'Gilroy-Medium';
+  }
+
+  .user__name > span {
+    font-size: 15px;
+    font-weight: 400;
+    color: #0063A9;
+    font-family: 'Gilroy-Regular';
+  }
+}

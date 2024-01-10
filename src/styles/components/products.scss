@@ -54,8 +54,14 @@
         right: 10px;
         top: 10px;
       }
+
       .heart:hover {
         background: var(--lightest-main-color, #d7eefe);
+      }
+
+      .heart > svg {
+        width: 17px;
+        height: 17px;
       }
 
       svg,
@@ -66,6 +72,11 @@
       }
     }
 
+    .heart > svg {
+      width: 17px;
+      height: 17px;
+    }
+
     h3 {
       color: #1a1919;
       font-size: 14px;
@@ -74,29 +85,43 @@
     }
 
     .redPrice {
-      color: #f00;
+      font-size: 19px;
+      font-weight: 700;
+      color: #ff0000;
+      font-family: 'Gilroy-bold', sans-serif;
       margin-right: 10px;
     }
 
     .discountPrice {
+      font-family: 'Gilroy-bold', sans-serif;
       color: #808080;
-      font-size: 16px;
+      font-size: 14px;
+      font-weight: 700;
       text-decoration-line: line-through;
-    }
-
-    h2 {
-      font-size: 18px;
+      margin-bottom: 4px;
     }
 
     h4 {
-      font-size: 15px;
+      font-size: 12.44px;
       color: #82cf6f;
+      font-weight: 600;
+      font-family: 'Gilroy-Medium', sans-serif;
+    }
+
+    h2 {
+      display: flex;
     }
 
     h5 {
       display: flex;
       align-items: center;
       gap: 5px;
+      color: #3286C2;
+      font-size: 12px;
+    }
+
+    h5 > svg > circle {
+      fill: #3286C2;
     }
 
     img {
@@ -115,12 +140,17 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: 0.2s;
+        transition: all 0.2s;
       }
       .quantity:hover {
         border-radius: 1000px;
         border: 1px solid #dfdfdf;
       }
+
+      * {
+        transition: all 0.2s;
+      }
+
       svg:hover {
         border-radius: 1000px;
         rect {
@@ -130,7 +160,11 @@
       svg:active {
         border-radius: 1000px;
         rect {
-          fill: #3286c3;
+          fill: #004f86;
+        }
+
+        path {
+          fill: #fff;
         }
       }
       .mathDiv {
