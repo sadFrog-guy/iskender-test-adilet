@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Route, Routes, useLocation} from "react-router-dom";
 import Profile from "../myAccount/pages/Profile";
 import Favourites from "../myAccount/pages/Favourites";
@@ -11,7 +11,11 @@ import NavBarMobile from "../NavBarMobile/NavBarMobile";
 
 const PersonalAccountMobile = () => {
   const current = useLocation();
-  const isProfile = current.pathname === '/my-account/';
+  const [isProfile, setIsProfile] = useState(false);
+
+  useEffect(() => {
+    setIsProfile(current.pathname === '/my-account')
+  }, [current.pathname])
 
   return (
       <>

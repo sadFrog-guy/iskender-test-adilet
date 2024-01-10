@@ -36,11 +36,7 @@ const ProfileEditMobile = () => {
   };
 
   const handlePfpClick = () => {
-    setPfpActive(true)
-  }
-
-  const handleDarkClick = () => {
-    setPfpActive(false)
+    setPfpActive(!isPfpActive)
   }
 
   return (

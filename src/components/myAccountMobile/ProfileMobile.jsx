@@ -1,35 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { ReactComponent as ArrowIcon } from '../icons/Arrow 6.svg';
 import { ReactComponent as EllipsesSvg } from '../icons/ellipses.svg';
 import profile_photo from '../../assets/profile.png';
 import {NavLink} from "react-router-dom";
 import * as Icons from '../icons/myAccount';
 import '../../styles/components/ProfileMobile.scss';
+import ModalMobileB from "../ModalMobile/ModalMobileB";
 
 const ProfileMobile = () => {
+  const [isLogoutModal, setLogoutModal] = useState(false)
+
+  const handleLogoutModal = () => {
+    setLogoutModal(!isLogoutModal)
+  }
+
   return (
       <div className='profileAdaptive'>
-        <div className='profileAdaptive_modal'>
-          <div className="profileAdaptive_modal__dark"/>
-
-          <div className="profileAdaptive_modal__window">
-            <div className="profileAdaptive_modal__top">
-              <p className="profileAdaptive_modal__title">
-                Вы действительно хотите выйти?
-              </p>
-            </div>
-
-            <div className="profileAdaptive_modal__bottom">
-              <button className="profileAdaptive_modal__button">
-                Выйти
-              </button>
-
-              <button className="profileAdaptive_modal__button">
-                Выйти
-              </button>
-            </div>
-          </div>
-        </div>
+        <ModalMobileB
+          isActive={isLogoutModal}
+          handleClick={handleLogoutModal}
+        />
 
         <div className="profileAdaptive_background">
           <EllipsesSvg/>
@@ -149,16 +139,14 @@ const ProfileMobile = () => {
               </NavLink>
             </div>
 
-            <div className="profileAdaptive_list">
-              <NavLink
+            <div className="profileAdaptive_list" onClick={handleLogoutModal}>
+              <div
                   className={`my_account_navigation_block_link no_border`}
-                  to='/'
-                  end
               >
                 <div className='profileAdaptive_list__item'>
                   <img src={Icons.LogoutIcon} alt='Test' /> Выйти
                 </div>
-              </NavLink>
+              </div>
             </div>
           </div>
         </div>
