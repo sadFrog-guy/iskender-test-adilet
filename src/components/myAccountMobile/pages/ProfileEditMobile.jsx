@@ -1,17 +1,17 @@
 import React, {useState} from 'react';
-import { ReactComponent as ArrowIcon } from '../icons/Arrow 6.svg';
-import { ReactComponent as CameraIcon } from '../icons/Camera.svg';
-import profile_photo from '../../assets/profile.png';
-import userMy_icon from "../icons/User.svg";
-import kyrgyzstan_icon from "../icons/Kyrgyzstan.svg";
-import arrowDown_icon from "../icons/arrow-down.svg";
-import messageMy_icon from "../icons/Message.svg";
-import calendarMy_icon from "../icons/calendar.svg";
-import locationMy_icon from "../icons/Location-i.svg";
+import { ReactComponent as ArrowIcon } from '../../icons/Arrow 6.svg';
+import { ReactComponent as CameraIcon } from '../../icons/Camera.svg';
+import profile_photo from '../../../assets/profile.png';
+import userMy_icon from "../../icons/User.svg";
+import kyrgyzstan_icon from "../../icons/Kyrgyzstan.svg";
+import arrowDown_icon from "../../icons/arrow-down.svg";
+import messageMy_icon from "../../icons/Message.svg";
+import calendarMy_icon from "../../icons/calendar.svg";
+import locationMy_icon from "../../icons/Location-i.svg";
 import {useForm} from "react-hook-form";
-import '../../styles/components/ProfileEditMobile.scss';
-import ModalButtonMobile from "../ModalButtonMobile/ModalButtonMobile";
-import ModalMobileA from "../ModalMobile/ModalMobileA";
+import '../../../styles/components/ProfileEditMobile.scss';
+import ModalButtonMobile from "../../ModalButtonMobile/ModalButtonMobile";
+import ModalMobileA from "../../ModalMobile/ModalMobileA";
 import {NavLink} from "react-router-dom";
 
 const ProfileEditMobile = () => {

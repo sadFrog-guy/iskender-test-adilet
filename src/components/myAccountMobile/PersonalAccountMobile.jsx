@@ -5,8 +5,8 @@ import Favourites from "../myAccount/pages/Favourites";
 import OrderHistory from "../myAccount/pages/OrderHistory";
 import PrivacyPolicy from "../myAccount/pages/PrivacyPolicy";
 import TermsUse from "../myAccount/pages/TermsUse";
-import ProfileMobile from "./ProfileMobile";
-import ProfileEditMobile from "./ProfileEditMobile";
+import ProfileMobile from "./pages/ProfileMobile";
+import ProfileEditMobile from "./pages/ProfileEditMobile";
 import NavBarMobile from "../NavBarMobile/NavBarMobile";
 
 const PersonalAccountMobile = () => {

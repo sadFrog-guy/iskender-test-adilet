@@ -10,7 +10,7 @@ import DetailOfProduct from './pages/DetailOfProduct';
 
 import Plug from './Plug';
 import useCheckMobileScreen from "./hooks/useCheckMobileScreen";
-import ProfileMobile from "./components/myAccountMobile/ProfileMobile";
+import ProfileMobile from "./components/myAccountMobile/pages/ProfileMobile";
 import PersonalAccountMobile from "./components/myAccountMobile/PersonalAccountMobile";
 
 function App() {

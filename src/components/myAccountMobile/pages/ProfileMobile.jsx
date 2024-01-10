@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import { ReactComponent as ArrowIcon } from '../icons/Arrow 6.svg';
-import { ReactComponent as EllipsesSvg } from '../icons/ellipses.svg';
-import profile_photo from '../../assets/profile.png';
+import { ReactComponent as ArrowIcon } from '../../icons/Arrow 6.svg';
+import { ReactComponent as EllipsesSvg } from '../../icons/ellipses.svg';
+import profile_photo from '../../../assets/profile.png';
 import {NavLink} from "react-router-dom";
-import * as Icons from '../icons/myAccount';
-import '../../styles/components/ProfileMobile.scss';
-import ModalMobileB from "../ModalMobile/ModalMobileB";
+import * as Icons from '../../icons/myAccount';
+import '../../../styles/components/ProfileMobile.scss';
+import ModalMobileB from "../../ModalMobile/ModalMobileB";
 
 const ProfileMobile = () => {
   const [isLogoutModal, setLogoutModal] = useState(false)
