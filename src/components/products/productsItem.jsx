@@ -51,9 +51,9 @@ const ProductsItem = ({ product }) => {
               {isHeartActive ? <HeartFilled/> : <Heart />}
             </div>
             {product.image !== null ? (
-                <img src={product.image} alt={product.name} />
+                <img onClick={navigateToDetail} src={product.image} alt={product.name} />
             ) : (
-                <ProductDefault />
+                <ProductDefault onClick={navigateToDetail} />
             )}
           </div>
           <h3 onClick={navigateToDetail}>{product.name}</h3>
