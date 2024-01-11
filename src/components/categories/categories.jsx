@@ -20,13 +20,11 @@ const Categories = () => {
       categories.filter((category) => category.img !== '').slice(0, 14)
     );
   }, [categories]);
+
   return (
     <div className='categories container'>
       <div className='categories-title'>
-        <h2>Каталог</h2>
-        <Link to='/catalog' className='categories-title_right'>
-          все категории
-        </Link>
+        <h2>Категории</h2>
       </div>
       <div className='categories-search'>
         <img src={searchIco} alt='search' />

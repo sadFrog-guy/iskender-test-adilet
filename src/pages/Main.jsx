@@ -13,7 +13,7 @@ function Main() {
             <BonusCurd />
             <div className="main-bottom">
                 <Categories />
-                <Products title="Хит продаж" />
+                <Products title="Хиты продаж"/>
                 <News />
                 <Products title="Акционные товары" />
                 <Branches />

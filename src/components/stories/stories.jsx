@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import eact, { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import StoriesItem from "./storiesItem"
 import StoriesModal from "./storiesModal"
@@ -63,7 +63,7 @@ const Stories = () => {
             ref={widthContainer}
             className="stories container"
         >
-            {modalOpen && <div className="stories-back"></div>}
+            {modalOpen && <div onClick={() => setModalOpen(false)} className="stories-back"></div>}
             <div className="stories-items">
                 {stories.map((story) => (
                     <StoriesItem

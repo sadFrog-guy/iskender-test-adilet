@@ -92,6 +92,12 @@
       margin-right: 10px;
     }
 
+    .normalPrice {
+      font-size: 19px;
+      font-weight: 700;
+      font-family: 'Gilroy-bold', sans-serif;
+    }
+
     .discountPrice {
       font-family: 'Gilroy-bold', sans-serif;
       color: #808080;
@@ -199,7 +205,7 @@
 }
 
 .slick-prev {
-  left: -40px;
+  left: -50px;
   background: url("../../components/icons/arrow-left.svg");
 }
 .slick-prev:hover,
@@ -208,7 +214,7 @@
 }
 
 .slick-next {
-  right: -30px;
+  right: -45px;
   background: url("../../components/icons/arrow-right.svg");
 }
 

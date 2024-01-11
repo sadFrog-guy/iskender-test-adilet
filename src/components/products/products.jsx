@@ -57,7 +57,7 @@ export default function Products({ title }) {
       <div className='products-title'>
         <h2>{title}</h2>
         <Link to='/catalog' className='categories-title_right'>
-          перейти в католог
+          перейти в каталог
         </Link>
       </div>
       <Slider {...settings}>

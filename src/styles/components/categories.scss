@@ -32,6 +32,8 @@
     h2 {
       color: #000;
       font-size: 25px;
+      font-weight: 600;
+      font-family: 'Gilroy-Medium';
     }
     &_right {
       color: #3186c3;
@@ -39,10 +41,10 @@
       cursor: pointer;
       border-bottom: 1px solid transparent;
       text-decoration: none;
+      font-weight: 600;
+      font-family: 'Gilroy-Medium';
     }
     &_right:hover {
-      // text-decoration: underline;
-      border-bottom: 1px solid #3186c3;
     }
   }
 
@@ -88,10 +90,24 @@
     box-sizing: border-box;
     transition: box-shadow 0.3s ease;
 
-    h3 {
-      padding: 10px 10px 0 10px;
-      color: #000;
-      font-size: 14px;
+    .categories-item-wrap {
+      padding: 9.71px 10.76px 0 10.76px;
+
+      h3 {
+        margin-bottom: 2.50px;
+        color: #000;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: 'Gilroy-Medium';
+      }
+
+      p {
+        font-size: 12px;
+        font-weight: 400;
+        font-family: 'Gilroy-Regular';
+        color: #727272;
+        margin-bottom: 20px;
+      }
     }
 
     // h4 {

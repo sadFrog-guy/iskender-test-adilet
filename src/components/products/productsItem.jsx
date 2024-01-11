@@ -58,7 +58,7 @@ const ProductsItem = ({ product }) => {
           </div>
           <h3 onClick={navigateToDetail}>{product.name}</h3>
           <h2>
-          <span className={product.promoPrice > 0 ? 'redPrice' : ''}>
+          <span className={product.promoPrice > 0 ? 'redPrice' : 'normalPrice'}>
             {product.price} с
           </span>
             <span className='discountPrice'>

@@ -15,7 +15,7 @@ const StoriesItem = ({ story, selectStory }) => {
         >
             <img
                 style={{
-                    border: `1px solid ${
+                    border: `2px solid ${
                         watched[story._id] ? "#5c5c5c" : "#d8effd"
                     }`,
                 }}
