@@ -13,7 +13,7 @@ const EmailInput = ({ handleChange }) => {
         name='email'
         type='email'
         placeholder='Ваша почта'
-        onChange={(e) => handleChange(e)}
+        onChange={(e) => handleChange(e, 'email')}
       />
     </div>
   );
