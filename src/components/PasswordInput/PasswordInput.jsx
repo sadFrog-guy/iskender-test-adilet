@@ -18,7 +18,7 @@ const PasswordInput = ({ handleChange, label, addition }) => {
         id='password'
         name='password'
         type={shownPassword ? 'text' : 'password'}
-        onChange={(e) => handleChange(e)}
+        onChange={(e) => handleChange(e, 'password')}
       />
       {shownPassword ? (
         <OpenEye onClick={handleShow} />

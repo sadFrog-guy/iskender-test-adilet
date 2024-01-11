@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UseEnterShow } from '../../context/EnterContext';
 import { ReactComponent as Logo } from '../../components/icons/Group.svg';
@@ -9,9 +9,12 @@ import Register from './Register';
 import 'react-phone-number-input/style.css';
 import 'react-phone-number-input/style.css';
 import './Enter.scss';
+import { Toast } from 'primereact/toast';
+import { loginClientEmail, loginClientPhone } from '../../services/api';
 
 const LogIn = () => {
   const navigate = useNavigate();
+  const toast = useRef(null);
   const {
     loginWithPhone,
     loginWithEmail,
@@ -25,47 +28,45 @@ const LogIn = () => {
     setLoginWithEmail(false);
     setRegister(true);
   };
-  const [tel, setTel] = useState();
-  const [userDataPhone, setUserDataPhone] = useState({
-    phoneNumber: null,
-    password: '',
-  });
-  const [userDataEmail, setUserDataEmail] = useState({
-    email: null,
-    password: '',
-  });
+  const [password, setPassword] = useState('');
+  const [userDataPhone, setUserDataPhone] = useState(null);
+  const [userDataEmail, setUserDataEmail] = useState(null);
 
-  const handleChange = (e) => {
+  const showToast = (msg) => {
+    toast.current.show({ severity: 'info', summary: 'Info', detail: msg });
+  };
+  const handleChangeUser = (e) => {
     if (loginWithEmail) {
-      setUserDataEmail({
-        ...userDataEmail,
-        email: e.target.value,
-        password: e.target.value,
-      });
+      setUserDataEmail(e.target.value); return
     }
-    setUserDataPhone({
-      ...userDataPhone,
-      phoneNumber: tel,
-      password: e.target.value,
-    });
+    setUserDataPhone(e);
   };
-  const isVariable = () => {
-    const Datas = Object.values(
-      (loginWithPhone && userDataPhone) || (loginWithEmail && userDataEmail)
-    );
-    if (Datas[0] !== null && Datas[1].length > 0) {
-      return true;
-    }
-    return false;
-  };
+  const handleChangePassword = (e) => {
+    setPassword(e.target.value);
+  }
 
-  const ClickEnterBtn = () => {
+  const isVariable = () => {
+    if (!password) return false
+    return (loginWithEmail && userDataEmail) || (loginWithPhone && userDataPhone)
+  };
+  const close = () => {
     setLoginWithPhone(false);
     setLoginWithEmail(false);
     navigate('/my-account', { replace: true });
-  };
-  const onSubmit = (e) => {
-    e.preventDefault();
+  }
+  const ClickEnterBtn = () => {
+    if (loginWithPhone) {
+      loginClientPhone({ phone: userDataPhone, password })
+        .then(res => close())
+        .catch(err => {
+          showToast(err?.response?.data?.msg)
+          console.log(err)
+        })
+      return
+    }
+    loginClientEmail({ email: userDataEmail, password })
+      .then(res => close())
+      .catch(err => showToast(err?.response?.data?.msg))
   };
 
   useEffect(() => {
@@ -87,8 +88,8 @@ const LogIn = () => {
             <p className='desc-sec'>Введите свои данные, чтобы войти</p>
           </div>
 
-          <form onSubmit={(e) => onSubmit(e)}>
-            {loginWithEmail && <EmailInput handleChange={handleChange} />}
+          <form>
+            {loginWithEmail && <EmailInput handleChange={handleChangeUser} />}
             {loginWithPhone && (
               <div className='input'>
                 <label htmlFor='phoneNumber' className='label'>
@@ -101,32 +102,25 @@ const LogIn = () => {
                   displayInitialValueAsLocalNumber
                   withCountryCallingCode
                   initialValueFormat='national'
-                  value={tel}
-                  onChange={setTel}
+                  onChange={handleChangeUser}
                 />
               </div>
             )}
 
-            <PasswordInput handleChange={handleChange} />
+            <PasswordInput handleChange={handleChangePassword} />
 
             <div className='bottom-form'>
               <div className='remember'>
                 <input type='checkbox' id={'checkbox'} />
                 <label htmlFor='checkbox'>Запомнить меня</label>
               </div>
-              {isVariable() ? (
-                <button
-                  type='button'
-                  className={'button'}
-                  onClick={ClickEnterBtn}
-                >
-                  Войти
-                </button>
-              ) : (
-                <button type='button' className={'disabled'}>
-                  Войти
-                </button>
-              )}
+              <button type='button'
+                className={!isVariable() ? 'disabled' : 'button'}
+                disabled={!isVariable()}
+                onClick={ClickEnterBtn}
+              >
+                Войти
+              </button>
             </div>
           </form>
 
@@ -134,6 +128,7 @@ const LogIn = () => {
             Новый пользователь? <a href='#'>Зарегистрироваться</a>
           </p>
         </div>
+        <Toast ref={toast} />
       </div>
     </div>
   );
